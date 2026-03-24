@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A EVS Construtora oferece serviços de pintura predial, reformas, acabamentos e construção civil em São Paulo. Qualidade, compromisso e excelência em cada projeto.">
+    <title>EVS Construtora | Pintura Predial, Reformas e Construção em São Paulo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+      :root {
+            --light-gray: #f5f5f5;
+            --dark-blue: #0B2A47;
+            --primary-yellow: #ffb400;
+            --secondary-yellow: #ffaa00;
+            --white: #ffffff;
+        }
+
+        body { 
+            background-color: var(--light-gray); 
+            color: #333; 
+            line-height: 1.6; 
+            margin: 0;
+        }
+
+        .section-fullscreen {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            padding-top: 100px; 
+            width: 100%;
+        }
+
+        .carousel {
+            margin: 0;
+            width: 100%;
+            border-radius: 0; 
+            overflow: hidden;
+        }
+
+        .carousel img {
+            height: 500px;
+            width: 100%;
+            margin: 0; 
+            object-fit: cover;
+        }
+
+        header {
+            background-color: #0B2A47;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+            .logo-container{
+               display:flex;
+               align-items:center;
+        }
+
+            .logo-container img{
+              height:90px;
+              width:auto;
+        }
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; }
+
+        nav ul li { margin-left: 35px; }
+
+        nav ul li a { 
+            text-decoration: none; 
+            color: #ffffff; 
+            font-weight: 400; 
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: var(--primary-yellow)}
+
+
+        section { padding: 80px 10% 60px; }
+        .section-title { text-align: center; margin-bottom: 50px; 
+            color: var(--dark-blue); 
+            font-size: 2.5rem; 
+            position: relative; }
+
+        .section-title::after { content: ""; position: absolute; 
+            bottom: -10px; left: 50%; 
+            transform: translateX(-50%); 
+            width: 80px; height: 4px; 
+            background-color: var(--primary-yellow); }
+
+        .sobre-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 50px; flex-wrap: wrap; }
+
+        .sobre-text, .sobre-img { 
+            flex: 1; 
+            min-width: 300px; }
+
+        .sobre-img img { 
+            width: 100%; 
+            border-radius: 10px; 
+            box-shadow: 20px 20px 0px 
+            var(--primary-yellow); }
+
+        .services-grid { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 30px; }
+
+        .service-card { background: var(--white); padding: 40px; 
+            border-radius: 8px; 
+            text-align: none; 
+            transition: 0.3s; 
+            border-top: 5px solid transparent; }
+
+        .service-card:hover { 
+            transform: translateY(-10px); 
+            border-top-color: var(--primary-yellow); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        .service-card i { font-size: 3rem; 
+            color: var(--dark-blue); 
+            margin-bottom: 20px; }
+
+            .whatsapp-float{
+               position:fixed;
+               bottom:20px;
+               right:20px;
+               background:#25D366;
+               color:white;
+               font-size:30px;
+               width:60px;
+               height:60px;
+               display:flex;
+               align-items:center;
+               justify-content:center;
+               border-radius:50%;
+               text-decoration:none;
+               box-shadow:0 4px 10px rgba(0,0,0,0.3);
+               z-index:999;
+            }
+
+        .galeria{
+            background: var(--dark-blue);
+            padding:60px 0;
+        }
+
+        .galeria h2{
+           color:white;
+           text-align:center;
+           margin-bottom:40px;
+        }
+
+        .foto-item {
+           text-align: center;
+        }
+
+        .foto-item p {
+            margin-top: 8px;
+            font-weight: 500;
+            color: #fff; 
+        }
+        .container-fotos{
+          display:grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap:20px;
+          padding:40px;
+        }
+
+        .container-fotos img{
+           width:100%;
+           height:200px;
+           object-fit:cover;
+           border-radius:8px;
+        }
+
+        .contact-wrapper { 
+            display: flex; 
+            gap: 40px; flex-wrap: wrap; }
+
+        .contact-info { 
+            flex: 1; 
+            background: var(--dark-blue); 
+            color: white; padding: 40px; 
+            border-radius: 2px; }
+
+        .contact-form { 
+            flex: 2; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 10px; }
+        
+        .form-group { 
+            margin-bottom: 20px; }
+
+        input, textarea { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; }
+
+        .btn-submit { 
+            background: var(--primary-yellow); 
+            color: var(--dark-blue); 
+            width: 100%; 
+            padding: 15px; 
+            border: none; 
+            font-weight: bold; 
+            cursor: pointer; 
+            text-transform: uppercase; }
+
+        footer { 
+            background: #061626; 
+            color: white; 
+            text-align: center; 
+            padding: 40px; }
+
+        .social-links a { 
+            color: white; 
+            font-size: 1.5rem; 
+            margin: 0 15px; }
+
+         @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo-container img {
+        height: 60px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+            section { padding: 40px 5%; }
+            .section-fullscreen { padding-top: 20px; }
+            .carousel img { height: 250px; }
+            .container-fotos { grid-template-columns: repeat(2, 1fr); padding: 10px; gap: 10px; }
+            .sobre-container { flex-direction: column; text-align: center; }
+            .contact-wrapper { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logot.png" alt="EVS" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+            <div class="logo-placeholder" style="display:none; color: white;">EVS Construtora</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="section-fullscreen"> 
+        <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagens/casa1.jpg" alt="EVS Construtora">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/casa5.jpg" alt="Projetos">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/banner.png" alt="Qualidade">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2 class="section-title">Sobre Nós</h2>
+        <div class="sobre-container">
+            <div class="sobre-img">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Engenharia EVS">
+            </div>
+            <div class="sobre-text">
+                <p>A EVS Construtora nasceu com o compromisso de transformar projetos em realidade, oferecendo soluções completas na área da construção civil.</p>
+                <p>Nosso objetivo é construir mais do que estruturas: queremos construir confiança, realizando cada projeto com responsabilidade, planejamento e atenção aos detalhes.</p>
+                <p>Na EVS Construtora, valorizamos a transparência, o respeito e o compromisso com prazos, sempre buscando entregar obras que representem solidez, modernidade e excelência.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-building"></i>
+                <h3>Instalações</h3>
+               <ul>
+                  <li>Instalações elétricas</li>
+                  <li>Instalações hidráulicas</li>
+                  <li>Instalação de sistemas de iluminação</li>
+                  <li>Instalação de ar-condicionado</li>
+                  <li>Sistema de esgoto e drenagem</li>
+             </ul>  
+           </div>
+             <div class="service-card">
+                <i class="fas fa-brush"></i>
+                <h3>Acabamentos</h3>
+            <ul>
+                 <li>Assentamento de pisos e revestimentos</li>
+                 <li>Instalação de porcelanato e cerâmica</li>
+                 <li>Pintura interna e externa</li>
+                 <li>Gesso e drywall</li>
+                 <li>Forros e sancas</li>
+                 <li>Texturas e acabamentos decorativos</li>
+              </ul>  
+            </div>
+             </div>
+
+              </ul>  
+            </div>
+              <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h3>Acabamentos</h3>
+            <ul>
+                <li>Assentamento de pisos e revestimentos</li>
+                <li>Instalação de porcelanato e cerâmica</li>
+                <li>Pintura interna e externa</li>
+                <li>Gesso e drywall</li>
+                <li>Forros e sancas</li>
+                <li>Texturas e acabamentos decorativos</li>
+            </ul>  
+                </div>
+              </ul>  
+                </div>
+             <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h3>Acabamentos</h3>
+            <ul>
+                <li>Reformas residenciais completas</li>
+                <li>Reformas comerciais (lojas, escritórios, clínicas)</li>
+                <li>Reformas de apartamentos</li>
+                <li>Modernização de ambientes</li>
+                <li>Ampliação de imóveis</li>
+                <li>Retrofit (atualização de construções antigas)</li>
+            </ul>  
+            </div>
+    </section>
+    
+        <a href="https://wa.me/5511959031673" target="_blank" class="whatsapp-float">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30">
+           <path fill="white" d="M16 .396C7.163.396 0 7.559 0 16c0 2.821.738 5.476 2.034 7.789L0 32l8.403-2.001A15.548 15.548 0 0 0 16 31.604c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 28.897c-2.398 0-4.733-.64-6.781-1.851l-.486-.288-4.987 1.186 1.333-4.859-.316-.501A13.23 13.23 0 0 1 2.77 16C2.77 8.955 8.52 3.205 15.565 3.205c7.045 0 12.795 5.75 12.795 12.795 0 7.045-5.75 12.793-12.795 12.793zm7.27-9.57c-.397-.198-2.348-1.158-2.712-1.289-.364-.132-.63-.198-.897.198-.264.397-1.027 1.289-1.259 1.554-.231.264-.462.297-.859.099-.397-.198-1.677-.618-3.195-1.972-1.18-1.053-1.978-2.354-2.209-2.751-.231-.397-.025-.611.173-.808.178-.177.397-.462.595-.693.198-.231.264-.397.397-.661.132-.264.066-.496-.033-.694-.099-.198-.897-2.159-1.23-2.956-.324-.778-.653-.673-.897-.686-.231-.012-.496-.015-.76-.015-.264 0-.694.099-1.059.496s-1.389 1.357-1.389 3.307 1.422 3.84 1.621 4.104c.198.264 2.799 4.272 6.781 5.987.948.409 1.687.653 2.264.835.951.302 1.817.259 2.501.157.763-.114 2.348-.959 2.679-1.885.331-.926.331-1.721.231-1.885-.099-.165-.364-.264-.76-.462z"/>
+            </svg> 
+            </a>
+  
+    <section class="galeria">
+          <h2 class="section-title">Nossos Trabalhos</h2>
+      <div class="container-fotos">
+
+      <div class="foto-item">
+           <img src="imagens/casa1.jpg" alt="">
+           <p>Construção Civil</p>
+      </div>
+
+      <div class="foto-item">
+           <img src="imagens/casa2.jpg" alt="">
+           <p>Aterramento</p>
+      </div>
+
+      <div class="foto-item">
+           <img src="imagens/casa3.jpg" alt="">
+           <p>Encanamento</p>
+      </div>
+
+      <div class="foto-item">
+           <img src="imagens/piso.jpg" alt="">
+           <p>Assentamento de Piso</p>
+      </div>
+
+      <div class="foto-item">
+           <img src="imagens/casa5.jpg" alt="">
+           <p>Obras Residenciais</p>
+     </div>
+
+     <div class="foto-item">
+          <img src="imagens/casa6.jpg" alt="">
+          <p>Reformas</p>
+     </div>
+
+     <div class="foto-item">
+          <img src="imagens/eletricista.jpg" alt="">
+          <p>Acabamentos</p>
+     </div>
+
+     <div class="foto-item">
+          <img src="imagens/pintura.jpg" alt="">
+          <p>Pintura Predial</p>
+     </div>
+
+  </div>
+</section>
+
+    <section id="contato">
+        <h2 class="section-title">Entre em Contato</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Informações</h2>
+                <div class="info-item"><i class=""></i>Tel: (11) 95903-1673</div>
+                <div class="info-item"><i class=""></i>E-mail: evs.servicoseconstrucao2@gmail.com</div>
+
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="https://www.instagram.com/evs.contrucao"><i class="fab fa-instagram"></i></a>Instagram
+                    <a href="https://wa.me/5511959031673"><i class="fab fa-whatsapp"></i></a>WhatsApp 
+                </div> 
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://wa.me/5511959031673" style="background: var(--primary-yellow); color: var(--dark-blue); padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">SOLICITAR ORÇAMENTO</a>
+                </div>
+            </div>
+            
+                <div class="contact-form">
+                   <form action="https://formspree.io/f/xqeydzag" method="POST">
+
+                <div class="form-group">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                </div>
+
+                <div class="form-group">
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+            </div>
+
+              <div class="form-group">
+               <textarea name="mensagem" rows="4" placeholder="Sua Mensagem" required></textarea>
+               </div>
+
+               <button type="submit" class="btn-submit">Enviar Mensagem</button>
+
+            </form>
+
+                  <div id="statusMessage" style="margin-top: 15px; display: none; padding: 10px; border-radius: 5px; text-align: center;"></div>            
+                  </div>
+            </section>
+
+                     <footer>
+                    <p>&copy; 2026 EVS Construções LTDA – Todos os direitos reservados.</p>
+                    <p><b>Jabaquara – São Paulo/SP</b></p>
+                    <p> CNPJ: 61.918.902/0001-04</p>
+                     </footer>
+
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+              </body>
+          </html>
